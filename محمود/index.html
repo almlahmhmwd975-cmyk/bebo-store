@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEBO | العطور، الساعات والإكسسوارات الفاخرة</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- استدعاء خط Cairo للمظهر العربي الفخم وخط Cinzel لشعار BEBO الإنجليزي -->
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- تأثير الإضاءة الراقية في الخلفية سوداء اللون -->
+    <div class="bg-glow"></div>
+
+    <!-- شريط التنقل العلوي الملكي باللون الأسود والذهبي -->
+    <header class="navbar">
+        <div class="logo">BEBO</div>
+        <nav>
+            <ul>
+                <li><a href="#perfumes-section">العطور</a></li>
+                <li><a href="#watches-section">الساعات</a></li>
+                <li><a href="#accessories-section">الإكسسوارات</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- قسم الترحيب الرئيسي المودرن مع النصوص المتحركة -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>متجر بيبو الفاخر يقدم لك</h1>
+        <p>عالم مليء بـ <span class="changing-text">فخامة</span></p>
+        <a href="#perfumes-section" class="hero-btn">اكتشف المجموعات</a>
+    </div>
+</section>
+
+    <!-- [القسم الأول]: عالم العطور الفاخرة -->
+    <section id="perfumes-section" class="store-section">
+        <!-- الـ GIF الأول: رش عطر فخم -->
+        <div class="gif-banner"> <video autoplay loop muted playsinline>
+    <source src="images/perfume-video.mp4" type="video/mp4">
+</video>
+
+            <div class="gif-overlay">
+                <h2>مجموعة العطور الفاخرة</h2>
+            </div>
+        </div>
+        <!-- حاوية المنتجات الخاصة بالعطور -->
+        <div class="products-grid" id="perfumes-container">
+            <!-- سيتم توليد منتجات العطور هنا بواسطة JavaScript تلقائياً -->
+        </div>
+    </section>
+
+    <!-- [القسم الثاني]: عالم الساعات النادرة -->
+    <section id="watches-section" class="store-section">
+        <!-- الـ GIF الثاني: يد يدخل فيها ساعة -->
+        <div class="gif-banner">
+        <video autoplay loop muted playsinline>
+    <source src="images/watch-video.mp4"type="video/mp4">
+
+            <div class="gif-overlay">
+                <h2>الساعات النادرة والكلاسيكية</h2>
+            </div>
+        </div>
+        <!-- حاوية المنتجات الخاصة بالساعات -->
+        <div class="products-grid" id="watches-container">
+            <!-- سيتم توليد منتجات الساعات هنا بواسطة JavaScript تلقائياً -->
+        </div>
+    </section>
+
+    <!-- [القسم الثالث]: عالم الإكسسوارات المصممة بعناية -->
+    <section id="accessories-section" class="store-section">
+        <!-- الـ GIF الثالث: واحدة تلبس عقد -->
+        <div class="gif-banner">
+            <video autoplay loop muted playsinline>
+    <source src="images/accessory-video.mp4" type="video/mp4">
+</video>
+س
+            <div class="gif-overlay">
+                <h2>الإكسسوارات والقطع الفنية</h2>
+            </div>
+        </div>
+        <!-- حاوية المنتجات الخاصة بالإكسسوارات -->
+        <div class="products-grid" id="accessories-container">
+            <!-- سيتم توليد منتجات الإكسسوارات هنا بواسطة JavaScript تلقائياً -->
+        </div>
+    </section>
+
+    <!-- استدعاء كود الربط اللحظي والواتساب الديناميكي -->
+    <script src="script.js"></script>
+<button id="backToTop" class="back-to-top">⬆️</button>
+
+<!-- شريط الإعلانات العلوي المتحرك -->
+<div class="announcement-bar">
+    <p>شحن مجاني للطلبات فوق بقيمة محددة! خصومات تصل إلى 25% بمناسبة الافتتاح <span>✨</span></p>
+</div>
+
+<!-- سلة التسوق التفاعلية الجانبية -->
+<div id="side-cart" class="side-cart">
+    <div class="cart-header">
+        <h3>سلة التسوق 🛒</h3>
+        <button onclick="toggleCart()" class="close-cart">×</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+        <!-- المنتجات المضافة ستظهر هنا ديناميكياً -->
+        <p class="empty-msg">السلة فارغة حالياً.</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">الإجمالي: <span id="cart-total-val">0</span> جنيه</div>
+        <button onclick="checkoutWhatsApp()" class="btn-checkout">إتمام الطلب عبر واتساب 💬</button>
+    </div>
+</div>
+
+<!-- زر فتح السلة العائم -->
+<button onclick="toggleCart()" class="floating-cart-btn">
+    🛒 <span id="cart-count">0</span>
+</button>
+<!-- مثال لسطر عطر أو ساعة داخل صفحة السلة -->
+<div id="cart-item-perfume-01" class="cart-item-row">
+    <img src="perfume.jpg" alt="عطر BEBO">
+    <div class="item-details">
+        <h4>عطر رويال فاخر</h4>
+        <p>السعر: 750 ج.م</p>
+    </div>
+    
+    <!-- زر الحذف الذي يستدعي دالة الجافاسكريبت -->
+    <button class="delete-btn" onclick="removeItemFromCart('perfume-01')">
+        🗑️ إزالة
+    </button>
+</div>
+
+</body>
+</html>

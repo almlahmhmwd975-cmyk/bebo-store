@@ -1,0 +1,34 @@
+# ⚙️ الإعدادات الأساسية لربط لوحة التحكم بالمستودع الشغال
+backend:
+  name: github
+  repo: almlahmhmwd975-cmyk/bebo-roan
+  branch: main
+
+# مجلد حفظ ميديا الصور وفيديوهات الساعات والعطور
+media_folder: "images"
+public_folder: "images"
+
+# 🛍️ هيكلة لوحة التحكم والأقسام (العطور والساعات والإكسسوارات)
+collections:
+  - name: "products"
+    label: "المنتجات (العطور والإكسسوارات)"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "اسم المنتج", name: "title", widget: "string" }
+      - { label: "المعرف الفريد (ID)", name: "id", widget: "string" }
+      - { label: "السعر (جنيه مصري)", name: "price", widget: "number" }
+      - { label: "صورة المنتج", name: "image", widget: "image" }
+      - { label: "القسم", name: "category", widget: "select", options: ["عطور", "ساعات", "إكسسوارات"] }
+      - { label: "وصف المنتج", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "إعدادات المتجر العامة"
+    files:
+      - file: "content/settings/general.json"
+        label: "الشريط العلوي والتنبيهات"
+        name: "general"
+        fields:
+          - { label: "نص شريط الإعلانات", name: "announcement_text", widget: "string" }
+          - { label: "تفعيل شريط الإعلانات", name: "show_announcement", widget: "boolean" }
