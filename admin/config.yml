@@ -2,6 +2,7 @@ backend:
   name: github
   repo: almlahmhmwd975-cmyk/bebo-store
   branch: main
+  base_url: https://vercel.app
 
 media_folder: "images"
 public_folder: "images"
